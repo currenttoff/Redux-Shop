@@ -1,0 +1,43 @@
+npm install axios
+
+npm install react-router-dom
+
+npm i redux react-redux
+
+semantic ui cdn
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+React Router V6
+routing part of the tutorial is outdated,In react-router-dom v6, "Switch" is replaced by routes "Routes". You need to update the import from
+
+import { Switch, Route } from "react-router-dom";
+to
+
+import { Routes ,Route } from 'react-router-dom';
+You also need to update the Route declaration from
+
+<Route path="/" component={Home} />
+to
+
+<Route path='/welcome' element={<Home/>} />
+In react-router-dom, you also do not need to use the exact in the Route declaration.
+
+function App() {
+return (
+<BrowserRouter>
+
+<Header></Header>
+<Routes>
+<Route path="/" element={<ProductListing></ProductListing>}></Route>
+<Route
+path="/product/:productId"
+element={<ProductDetail></ProductDetail>} ></Route>
+<Route>404 Not Found</Route>
+</Routes>
+</BrowserRouter>
+);
+}
+
+Fake API Store
+https://fakestoreapi.com/docs
